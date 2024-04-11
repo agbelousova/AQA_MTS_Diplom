@@ -2,10 +2,10 @@
 using System.Drawing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using TestRail.Helpers;
-using TestRail.Helpers.Configuration;
+using TestRail_Core.Helpers;
+using TestRail_Core.Helpers.Configuration;
 
-namespace TestRail.Elements;
+namespace TestRail_Core.Elements;
 
 public class UIElement : IWebElement
 {

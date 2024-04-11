@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using TestRail.Elements;
+using TestRail_Core.Elements;
 
-namespace TestRail.Helpers;
+namespace TestRail_Core.Helpers;
 
 public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
 {

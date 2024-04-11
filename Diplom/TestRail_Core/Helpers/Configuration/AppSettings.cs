@@ -1,4 +1,4 @@
-﻿namespace TestRail.Helpers.Configuration;
+﻿namespace TestRail_Core.Helpers.Configuration;
 
 public class AppSettings
 {

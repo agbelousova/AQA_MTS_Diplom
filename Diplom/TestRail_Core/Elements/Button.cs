@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace TestRail.Elements;
+namespace TestRail_Core.Elements;
 
 public class Button
 {

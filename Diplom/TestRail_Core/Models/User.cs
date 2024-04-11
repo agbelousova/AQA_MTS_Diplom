@@ -1,6 +1,6 @@
-﻿using TestRail.Models.Enums;
+﻿using TestRail_Core.Models.Enums;
 
-namespace TestRail.Models;
+namespace TestRail_Core.Models;
 
 public class User
 {

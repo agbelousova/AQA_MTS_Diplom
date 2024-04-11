@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
-using TestRail.Models;
-using TestRail.Models.Enums;
+using TestRail_Core.Models;
+using TestRail_Core.Models.Enums;
 
-namespace TestRail.Helpers.Configuration
+namespace TestRail_Core.Helpers.Configuration
 {
     public static class Configurator
     {
