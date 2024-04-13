@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
-using TestRail_Core.Elements;
 
-namespace TestRail_CoreCore.Elements;
+namespace TestRail_Core.Elements;
 
 public class Checkbox
 {

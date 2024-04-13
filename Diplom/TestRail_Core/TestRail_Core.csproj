@@ -38,11 +38,7 @@
 
     <ItemGroup>
       <Folder Include="Clients\" />
-      <Folder Include="Core\" />
-      <Folder Include="Pages\" />
       <Folder Include="Services\" />
-      <Folder Include="Steps\" />
-      <Folder Include="Tests\" />
     </ItemGroup>
 
     <ItemGroup>

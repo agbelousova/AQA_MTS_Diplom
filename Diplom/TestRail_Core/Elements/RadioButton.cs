@@ -1,11 +1,8 @@
 ﻿using OpenQA.Selenium;
-using TestRail_Core.Elements;
-using TestRail_Core.Helpers;
-using TestRail_Core.Helpers.Configuration;
 using TestRail_Core.Helpers;
 using TestRail_Core.Helpers.Configuration;
 
-namespace TestRailCore.Elements;
+namespace TestRail_Core.Elements;
 
 public class RadioButton
 {

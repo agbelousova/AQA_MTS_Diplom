@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -7,7 +8,7 @@ using TestRail_Core.Helpers.Configuration;
 
 namespace TestRail_Core.Elements;
 
-public class UIElement : IWebElement
+public class UIElement : IWebElement, IEnumerable
 {
     private IWebDriver _webDriver;
     private WaitsHelper _waitsHelper;
@@ -158,4 +159,8 @@ public class UIElement : IWebElement
     public Point Location => _webElement.Location;
     public Size Size => _webElement.Size;
     public bool Displayed => _webElement.Displayed;
+    public IEnumerator GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
 }
