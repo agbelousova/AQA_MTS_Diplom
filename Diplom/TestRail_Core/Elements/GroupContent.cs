@@ -22,7 +22,6 @@ public class GroupContent
         }
         _uiElement.Click();
     }
-    
     public List<string> GetText()
     {
             return _texts;
