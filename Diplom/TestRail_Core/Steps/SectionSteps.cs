@@ -1,17 +1,12 @@
 ﻿using OpenQA.Selenium;
 using TestRail_Core.Models;
 using TestRail_Core.Pages.SectionPages;
-using System.Collections.ObjectModel;
-using System.Reflection;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace TestRail_Core.Steps;
 
 public class SectionSteps(IWebDriver driver) : BaseStep(driver)
 {
-    public SectionBasePage AddSectionButton(Section _section)
+    public SectionBasePage AddSection(Section _section)
     {
         SectionBasePage = new SectionBasePage(Driver, true);
         
@@ -28,12 +23,19 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
         return new SectionBasePage(Driver);
     }
 
+    public string AddFaildSection(Section _section)
+    {
+        SectionBasePage = new SectionBasePage(Driver, true);
+        
+        SectionBasePage.AddSectionButton.Click();
+        SectionBasePage.DescriptionSection.SendKeys(_section.Description);
+        SectionBasePage.AddNewSectionButton.Click();
+        
+        return SectionBasePage.GetErrorLabelText();
+    }
     public string PopUpMessage()
     {
         SectionBasePage = new SectionBasePage(Driver, true);
         return SectionBasePage.PopUpMessage.GetAttribute("tooltip-text");
     }
-    
-    
-    
 }

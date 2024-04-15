@@ -25,7 +25,7 @@ public class SectionBasePage : BasePage
     private static readonly By PopUpMessageBy = By.Id("printPopupLink");
     private static readonly By DeleteSectionButtonBy = By.ClassName("icon-small-delete");
     private static readonly By DeleteCheckboxBy = By.CssSelector("[data-testid='caseFieldsTabDeleteDialogCheckbox']");
-    
+    private static readonly By ErrorMessageBy = By.Id("editSectionErrors");
     public SectionBasePage(IWebDriver driver) : base(driver)
     {
     }
@@ -49,6 +49,8 @@ public class SectionBasePage : BasePage
     public UIElement SelectUploadFile => new(Driver, SelectUploadFileBy);
     public Button DeleteSectionButton => new(Driver, DeleteSectionButtonBy);
     public UIElement DeleteCheckbox => new(Driver, DeleteCheckboxBy);
+    public UIElement ErrorMessage => new(Driver, ErrorMessageBy);
+    public string GetErrorLabelText() => WaitsHelper.WaitForVisibilityLocatedBy(ErrorMessageBy).Text.Trim();
     
     public UIElement PopUpMessage => new(Driver, PopUpMessageBy);
     //методы
@@ -65,6 +67,18 @@ public class SectionBasePage : BasePage
         }
 
         return flag;
+    }
+    
+    public string FindNameSection(Section section)
+    {
+        foreach (var name in SectionNewTitle.GetText())
+        {
+            if (name.Length == section.Name.Length)
+            {
+                return name;
+            }
+        }
+        return "error";
     }
     public void DeleteSection(string name)
     {

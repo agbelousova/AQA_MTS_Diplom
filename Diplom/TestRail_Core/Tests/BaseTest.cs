@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using TestRail_Core.Core;
 using TestRail_Core.Helpers.Configuration;
 using TestRail_Core.Models;
+using TestRail_Core.Pages.SectionPages;
 using TestRail_Core.Steps;
 
 namespace TestRail_Core.Tests;
@@ -17,6 +18,7 @@ public class BaseTest
     protected NavigationSteps _navigationSteps;
     protected ProjectSteps _projectSteps;
     protected SectionSteps _sectionSteps;
+    protected SectionBasePage _sectionBasePage;
 
     protected User? Admin { get; private set; }
 
@@ -28,6 +30,7 @@ public class BaseTest
         _navigationSteps = new NavigationSteps(Driver);
         _projectSteps = new ProjectSteps(Driver);
         _sectionSteps = new SectionSteps(Driver);
+        _sectionBasePage = new SectionBasePage(Driver);
 
         Admin = Configurator.Admin;
         

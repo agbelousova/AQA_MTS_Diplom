@@ -6,5 +6,5 @@ public record Section
 {
     [JsonPropertyName("name")] public string Name { get; set; }
     [JsonPropertyName("id")] public int Id { get; init; }
-    [JsonPropertyName("description")] public string Description { get; set; }
+    [JsonPropertyName("description")] public string? Description { get; init; }
 }

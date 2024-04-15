@@ -1,8 +1,11 @@
+using TestRail_Core.Models;
+
 namespace TestRail_Core.Tests;
 
 public class LoginTest : BaseTest
 {
     [Test]
+    [Category("Positive")]
     public void SuccessfulLoginTest()
     {
         Assert.That(
@@ -11,5 +14,20 @@ public class LoginTest : BaseTest
                 .SidebarProjectsAddButton
                 .Displayed
         );
+    }
+    
+    [Test]
+    [Category("Negative")]
+    public void FailedLoginTest()
+    {
+        Assert.That(
+                _navigationSteps
+                    .IncorrectLogin(new User
+                    {
+                        Username = "wrongUsername",
+                        Password = Admin.Password
+                    })
+                    .GetErrorLabelText(), 
+                Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
     }
 }
